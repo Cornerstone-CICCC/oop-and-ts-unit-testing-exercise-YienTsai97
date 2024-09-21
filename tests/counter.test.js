@@ -5,3 +5,11 @@
 // HINT: Use the jest `resolves` matcher so that it is easier to work with async functions
 
 const counter = require('../src/counter')
+
+test('counter(3, "increment") will eventualy return 3', () => {
+    return expect(counter(3, 'increment')).resolves.toBe(3)
+})
+
+test('counter(3, "decrement") will eventualy return 10', () => {
+    return expect(counter(3, 'decrement')).resolves.toBe(0)
+})
